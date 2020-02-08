@@ -7,8 +7,9 @@ This repository contains code related to the Python module PyShark, which is a w
 <p align="justify">
 PyShark can operate in either LiveCapture or FileCapture modes. Both modes have methods that can be used to parse specific
 packet level attributes, which includes protocols and their associated ports. 
-<br>
-<br>
+</p>
+
+<p align="justify">
 PyShark has two primary filters. The **BPF_Filter** is used in LiveCapture mode and the **Display_Filter** is used in the FileCapture mode.
 </p>
 
