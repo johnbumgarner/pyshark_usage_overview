@@ -8,6 +8,26 @@
 import pyshark
 
 
+def get_packet_details(packet):
+    """
+    This function is designed to parse specific details from an individual packet.
+
+    :param packet: raw packet from either a pcap file or via live capture using TShark
+    :return: specific packet details
+    """
+    protocol = packet.transport_layer
+    source_address = packet.ip.src
+    source_port = packet[packet.transport_layer].srcport
+    destination_address = packet.ip.dst
+    destination_port = packet[packet.transport_layer].dstport
+    packet_time = packet.sniff_time
+    return f'Packet Timestamp: {packet_time}' \
+           f'\nProtocol type: {protocol}' \
+           f'\nSource address: {source_address}' \
+           f'\nSource port: {source_port}' \
+           f'\nDestination address: {destination_address}' \
+           f'\nDestination port: {destination_port}\n'
+
 #############################################################################################
 # This section is used to parse various types of protocols and their associated port numbers
 # from a standard Packet Capture (PCAP) file using PyShark.
@@ -21,18 +41,8 @@ def filter_all_tcp_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp'):
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_all_udp_traffic_file(packet):
@@ -44,18 +54,8 @@ def filter_all_udp_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'udp'):
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_dns_traffic_file(packet):
@@ -67,18 +67,8 @@ def filter_dns_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_ftp_traffic_file(packet):
@@ -90,18 +80,8 @@ def filter_ftp_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '21':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_http_traffic_file(packet):
@@ -113,18 +93,8 @@ def filter_http_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '80':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_https_traffic_file(packet):
@@ -136,19 +106,8 @@ def filter_https_traffic_file(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '443':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
-
+        results = get_packet_details(packet)
+        return results
 
 def filter_netbios_traffic_file(packet):
     """
@@ -168,18 +127,8 @@ def filter_netbios_traffic_file(packet):
     if hasattr(packet, 'tcp'):
         if packet[packet.transport_layer].dstport == '139' \
                 or packet[packet.transport_layer].dstport == '445':
-            protocol = packet.transport_layer
-            source_address = packet.ip.src
-            source_port = packet[packet.transport_layer].srcport
-            destination_address = packet.ip.dst
-            destination_port = packet[packet.transport_layer].dstport
-            packet_time = packet.sniff_time
-            return f'Packet Timestamp: {packet_time}' \
-                   f'\nProtocol type: {protocol}' \
-                   f'\nSource address: {source_address}' \
-                   f'\nSource port: {source_port}' \
-                   f'\nDestination address: {destination_address}' \
-                   f'\nDestination port: {destination_port}\n'
+            results = get_packet_details(packet)
+            return results
 
 
 def filter_all_web_traffic_file(packet):
@@ -192,19 +141,8 @@ def filter_all_web_traffic_file(packet):
     """
     if hasattr(packet, 'tcp'):
         if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
-            protocol = packet.transport_layer
-            source_address = packet.ip.src
-            source_port = packet[packet.transport_layer].srcport
-            destination_address = packet.ip.dst
-            destination_port = packet[packet.transport_layer].dstport
-            packet_time = packet.sniff_time
-            return f'Packet Timestamp: {packet_time}' \
-                   f'\nProtocol type: {protocol}' \
-                   f'\nSource address: {source_address}' \
-                   f'\nSource port: {source_port}' \
-                   f'\nDestination address: {destination_address}' \
-                   f'\nDestination port: {destination_port}\n'
-
+            results = get_packet_details(packet)
+            return results
 
 def get_file_captures(parse_type, pcap_file):
     capture = pyshark.FileCapture(pcap_file)
@@ -222,7 +160,7 @@ def get_file_captures(parse_type, pcap_file):
             if results is not None:
                 print(results)
         elif parse_type is 'http':
-            results = filter_https_traffic_file(raw_packet)
+            results = filter_http_traffic_file(raw_packet)
             if results is not None:
                 print(results)
         elif parse_type is 'netbios':
@@ -285,18 +223,8 @@ def filter_all_web_traffic_file(packet):
     """
     if hasattr(packet, 'tcp'):
         if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
-            protocol = packet.transport_layer
-            source_address = packet.ip.src
-            source_port = packet[packet.transport_layer].srcport
-            destination_address = packet.ip.dst
-            destination_port = packet[packet.transport_layer].dstport
-            packet_time = packet.sniff_time
-            return f'Packet Timestamp: {packet_time}' \
-                   f'\nProtocol type: {protocol}' \
-                   f'\nSource address: {source_address}' \
-                   f'\nSource port: {source_port}' \
-                   f'\nDestination address: {destination_address}' \
-                   f'\nDestination port: {destination_port}\n'
+            results = get_packet_details(packet)
+            return results
 
 
 def filter_https_live_packet_capture(packet):
@@ -308,18 +236,8 @@ def filter_https_live_packet_capture(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '443':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_http_live_packet_capture(packet):
@@ -331,18 +249,8 @@ def filter_http_live_packet_capture(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '80':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_ssh_live_packet_capture(packet):
@@ -354,18 +262,8 @@ def filter_ssh_live_packet_capture(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '22':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def filter_ftp_live_packet_capture(packet):
@@ -377,18 +275,8 @@ def filter_ftp_live_packet_capture(packet):
     :return: specific packet details
     """
     if hasattr(packet, 'tcp') and packet[packet.transport_layer].dstport == '21':
-        protocol = packet.transport_layer
-        source_address = packet.ip.src
-        source_port = packet[packet.transport_layer].srcport
-        destination_address = packet.ip.dst
-        destination_port = packet[packet.transport_layer].dstport
-        packet_time = packet.sniff_time
-        return f'Packet Timestamp: {packet_time}' \
-               f'\nProtocol type: {protocol}' \
-               f'\nSource address: {source_address}' \
-               f'\nSource port: {source_port}' \
-               f'\nDestination address: {destination_address}' \
-               f'\nDestination port: {destination_port}\n'
+        results = get_packet_details(packet)
+        return results
 
 
 def get_live_captures(parse_type, network_interface):
@@ -449,7 +337,7 @@ def filter_retransmission_packet_file(packet, show_packets=''):
         destination_address = packet.ip.dst
         destination_port = packet[packet.transport_layer].dstport
         packet_time = packet.sniff_time
-               
+
         if "(suspected) retransmission" in str(packet.tcp) \
                 and "(suspected) spurious retransmission" in str(packet.tcp):
             return f'Suspected spurious retransmission' \
@@ -483,7 +371,7 @@ def filter_retransmission_live_capture(packet, show_packets=''):
         destination_address = packet.ip.dst
         destination_port = packet[packet.transport_layer].dstport
         packet_time = packet.sniff_time
-        
+
         if "(suspected) retransmission" in str(packet.tcp) \
                 and "(suspected) spurious retransmission" in str(packet.tcp):
 
@@ -528,15 +416,15 @@ def main():
 
     # PCAP file to parse
     pcap_file = 'smallFlows.pcap'
-    
+
     # Network interface used by TShark for live capture
     network_interface = 'en0'
 
-    # Parse types include: tcp, udp, dns, ftp, http, https, 
+    # Parse types include: tcp, udp, dns, ftp, http, https,
     # netbios, ssh, web (which includes http & https)
-    get_file_captures('netbios', pcap_file)
+    get_file_captures('http', pcap_file)
 
-    # Parse types include: dns, ftp, http, https, 
+    # Parse types include: dns, ftp, http, https,
     # ssh, web (which includes http & https)
     # get_live_captures('ftp', network_interface)
 
@@ -546,4 +434,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
