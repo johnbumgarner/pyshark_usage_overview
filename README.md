@@ -41,8 +41,6 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed.
 <br>
 
-`capture = pyshark.LiveCapture(interface='en0', bpf_filter='udp port 53')`<br>
-
 `protocol = packet.transport_layer`<br>
 `source_address = packet.ip.src`<br>
 `source_port = packet[packet.transport_layer].srcport`<br>
