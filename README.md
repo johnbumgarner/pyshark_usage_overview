@@ -15,7 +15,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in 
 
 ### Usage examples:
 <p align="justify">
-The examples below show how to parse Domain Name System (DNS) packets from either a Packet Capture (PCAP) file or from a live capture session.
+The examples below show how to parse Domain Name System (DNS) packets from either a Packet Capture (PCAP) file or from a TShark live capture session.
 </p>
 
 <p align="justify">
