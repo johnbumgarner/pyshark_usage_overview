@@ -36,6 +36,22 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`do something`
 </p>
 
+### Parsing examples:
+<p align="justify">
+  
+</p>
+
+<p align="justify">
+  
+`protocol = packet.transport_layer`<br>
+`source_address = packet.ip.src`<br>
+`source_port = packet[packet.transport_layer].srcport`<br>
+`destination_address = packet.ip.dst`<br>
+`destination_port = packet[packet.transport_layer].dstport`<br>
+`packet_time = packet.sniff_time`<br>
+
+</p>
+
 ## Prerequisites
 <p align="justify">
 TShark has to be installed and accessible via your $PATH, which Python queries. 
