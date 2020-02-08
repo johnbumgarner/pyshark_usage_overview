@@ -109,6 +109,7 @@ def filter_https_traffic_file(packet):
         results = get_packet_details(packet)
         return results
 
+    
 def filter_netbios_traffic_file(packet):
     """
     This function is designed to parse all the Server Message Block (SMB) packets
@@ -144,6 +145,7 @@ def filter_all_web_traffic_file(packet):
             results = get_packet_details(packet)
             return results
 
+        
 def get_file_captures(parse_type, pcap_file):
     capture = pyshark.FileCapture(pcap_file)
     for raw_packet in capture:
