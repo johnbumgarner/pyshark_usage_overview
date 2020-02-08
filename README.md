@@ -38,18 +38,29 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 
 ### Parsing examples:
 <p align="justify">
-  
+PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed.
 </p>
 
 <p align="justify">
-  
 `protocol = packet.transport_layer`<br>
 `source_address = packet.ip.src`<br>
 `source_port = packet[packet.transport_layer].srcport`<br>
 `destination_address = packet.ip.dst`<br>
 `destination_port = packet[packet.transport_layer].dstport`<br>
 `packet_time = packet.sniff_time`<br>
+`packet_timestamp = packet.sniff_timestamp`<br>
+</p>
 
+<p align="justify">
+<b>Output</b><br>
+  
+Protocol type: UDP<br>
+Source address: 192.168.3.1<br>
+Source port: 53<br>
+Destination address: 192.168.3.131<br>
+Destination port: 58673<br>
+Date and Time: 2011-01-25 13:57:18.356677<br>
+Timestamp: 1295981838.356677000<br>
 </p>
 
 ## Prerequisites
