@@ -42,10 +42,11 @@ PyShark has a lot of flexibility to parse various types of information from an i
 </p>
 
 <p align="justify">
+<br>
 `protocol = packet.transport_layer`<br>
 `source_address = packet.ip.src`<br>
 `source_port = packet[packet.transport_layer].srcport`<br>
-`destination_address = packet.ip.dst`<br>
+`destination_address = packet.ip.dst` <br>
 `destination_port = packet[packet.transport_layer].dstport`<br>
 `packet_time = packet.sniff_time`<br>
 `packet_timestamp = packet.sniff_timestamp`<br>
