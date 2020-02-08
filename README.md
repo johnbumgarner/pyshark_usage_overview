@@ -13,10 +13,11 @@ packet level attributes, which includes protocols and their associated ports.
 PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in LiveCapture mode and the <i><b>Display_Filter</b></i> that is used in FileCapture mode.
 </p>
 
+### Usage examples:
 <p align="justify">
 <i><b>BPF_Filter</b></i>
 
-`capture = pyshark.LiveCapture(interface=network_interface)`<br>
+`capture = pyshark.LiveCapture(interface=network_interface, bpf_filter='udp port 53')`<br>
 `capture.sniff(timeout=50)`<br>
 `for raw_packet in capture.sniff_continuously():`<br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `do something`
@@ -26,7 +27,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in 
 <p align="justify">
 <i><b>Display_Filter</b></i>
   
-`capture = pyshark.FileCapture(pcap_file)`<br>
+`capture = pyshark.FileCapture(pcap_file, display_filter='dns')`<br>
 `for raw_packet in capture:`<br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`do something`
 </p>
