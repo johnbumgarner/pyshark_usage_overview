@@ -19,7 +19,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in 
 `capture = pyshark.LiveCapture(interface=network_interface)`<br>
 `capture.sniff(timeout=50)`<br>
 `for raw_packet in capture.sniff_continuously():`<br>
-&nbsp;&nbsp;`do something`
+&nbsp;&nbsp;&nbsp;&nbsp;`do something`
 </p>
 
 
@@ -28,7 +28,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in 
   
 `capture = pyshark.FileCapture(pcap_file)`<br>
 `for raw_packet in capture:`<br>
-     `do something`
+&nbsp;&nbsp;&nbsp;&nbsp;`do something`
 </p>
 
 ## Prerequisites
