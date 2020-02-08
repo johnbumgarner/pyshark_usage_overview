@@ -63,7 +63,9 @@ Timestamp: 1295981838.356677000<br>
 
 ## Prerequisites
 <p align="justify">
-TShark has to be installed and accessible via your $PATH, which Python queries. 
+TShark has to be installed and accessible via your $PATH, which Python queries for PyShark. For this experiment TShark was installed using [homebrew](https://brew.sh). The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
+
+`brew install wireshark`
 </p>
 
 ## References:
