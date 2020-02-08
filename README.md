@@ -1,12 +1,15 @@
-# packet_analysis
+# Overview Packet Analysis
+
+<p align="justify">
 This repository contains code related to the Python module PyShark, which is a wrapper for the Wireshark CLI (TShark).
+</p>
 
+## References:
 
-References:
+* [PyShark](https://kiminewt.github.io/pyshark)
+* [Wireshark](https://www.wireshark.org)
+* [TShark](https://www.wireshark.org/docs/man-pages/tshark.html)
 
-https://kiminewt.github.io/pyshark
-https://www.wireshark.org
-https://www.wireshark.org/docs/man-pages/tshark.html
 
 ### Notes:
 
