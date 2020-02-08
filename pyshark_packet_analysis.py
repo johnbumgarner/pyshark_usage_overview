@@ -417,7 +417,7 @@ def get_retransmissions(parse_type, pcap_file, network_interface):
 def main():
 
     # PCAP file to parse
-    pcap_file = 'smallFlows.pcap'
+    pcap_file = 'traffic_flows_small.pcap'
 
     # Network interface used by TShark for live capture
     network_interface = 'en0'
