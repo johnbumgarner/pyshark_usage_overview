@@ -1,12 +1,16 @@
 # Overview Packet Analysis
 
 <p align="justify">
-This repository contains code related to the Python module PyShark, which is a wrapper for the Wireshark CLI (TShark). The latter using the Wireshark dissectors to sniff and capture packets from a network inteface. The real power of PyShark is the capability to access to all of the packet decoders built into TShark.
+This repository contains code related to the Python module PyShark, which is a wrapper for the Wireshark CLI (TShark). The latter using the Wireshark dissectors to sniff and capture packets from a network inteface. The real power of PyShark is its capability to access to all of the packet decoders built into TShark.
 </p>
 
 <p align="justify">
-
+PyShark can operate in either LiveCapture or FileCapture modes. Both modes have methods that can be used to parse specific
+packet level attributes, which includes protocols and their associated ports. 
+<b>
+PyShark has two primary filters. The **BPF_Filter** is used in LiveCapture mode and the **Display_Filter** is used in the FileCapture mode.
 </p>
+
 
 ## Prerequisites
 <p align="justify">
