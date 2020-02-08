@@ -10,9 +10,14 @@ packet level attributes, which includes protocols and their associated ports.
 </p>
 
 <p align="justify">
-PyShark has two primary filters. The <i><b>BPF_Filter</b></i> is used in LiveCapture mode and the <i><b>Display_Filter</b></i> is used in the FileCapture mode.
+PyShark has two primary filters. The <i><b>BPF_Filter</b></i>, which is used in LiveCapture mode and the <i><b>Display_Filter</b></i> that is used in FileCapture mode.
 </p>
 
+<p align="justify">
+<i><b>BPF_Filter</b></i>
+
+`<addr>`
+</p>
 
 
 ## Prerequisites
