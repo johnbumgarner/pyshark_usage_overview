@@ -39,9 +39,7 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 ### Parsing examples:
 <p align="justify">
 PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed.
-</p>
-
-<p align="justify">
+  
 <br>
 `protocol = packet.transport_layer`<br>
 `source_address = packet.ip.src`<br>
