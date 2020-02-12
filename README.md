@@ -37,7 +37,8 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 </p>
 
 <p align="justify">
-Packet filtering can also be accomplished without using the BPF_Filter or Display_Filter parameters.<br>
+<i><b>Function Level Filtering</b></i>
+This type of packet filtering does not use the built-in BPF_Filter or Display_Filter parameters.<br>
 
 `if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':`<br>
 
