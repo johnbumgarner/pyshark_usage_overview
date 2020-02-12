@@ -36,6 +36,18 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`do something`
 </p>
 
+<p align="justify">
+Packet filtering can also be accomplished without using the BPF_Filter or Display_Filter parameters.<br>
+
+`if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':`
+
+<br>or<br>
+
+`if hasattr(packet, 'tcp'):`<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':`<br>
+</p>
+
+
 ### Parsing examples:
 <p align="justify">
 PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed.
