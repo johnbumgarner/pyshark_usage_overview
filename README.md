@@ -39,12 +39,12 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 <p align="justify">
 Packet filtering can also be accomplished without using the BPF_Filter or Display_Filter parameters.<br>
 
-`if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':`
+`if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':`<br>
 
-<br>or<br>
+or
 
 `if hasattr(packet, 'tcp'):`<br>
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':`<br>
+&nbsp; &nbsp; &nbsp; &nbsp;`if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':`<br>
 </p>
 
 
