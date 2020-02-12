@@ -38,7 +38,7 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 
 <i><b>Function Level Filtering</b></i>
 <p align="justify">
-This type of packet filtering does not use the built-in BPF_Filter or Display_Filter parameters.<br>
+This type of packet filtering does not use the built-in PyShark's functions BPF_Filter or Display_Filter.<br>
 
 `if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':`<br>
 
