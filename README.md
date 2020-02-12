@@ -36,9 +36,8 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`do something`
 </p>
 
-<p align="justify">
 <i><b>Function Level Filtering</b></i>
-
+<p align="justify">
 <br>
 This type of packet filtering does not use the built-in BPF_Filter or Display_Filter parameters.<br>
 
