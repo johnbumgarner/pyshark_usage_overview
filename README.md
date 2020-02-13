@@ -109,8 +109,7 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `Date and Time: 2011-01-25 13:57:18.356677`<br>
 `Timestamp: 1295981838.356677000`<br>
 
-<b>Example Two:</b>
-<br>
+<b>Example Two:</b><br>
 This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
 <br>
 
@@ -153,6 +152,5 @@ The package Wireshark installs the command line utility TShark. The command used
 ## Notes:
 
 _The code within this repository is **not** production ready. It was **strictly** designed for experimental testing purposes only._
-
 <br>
 <b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
