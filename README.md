@@ -1,7 +1,7 @@
 # Overview Packet Analysis
 
 <p align="justify">
-This repository contains code related to the Python module PyShark, which is a wrapper for the Wireshark command-line interface (CLI) for TShark. The latter using the Wireshark dissectors to sniff and capture packets from a network inteface. The real power of PyShark is its capability to access to all of the packet decoders built into TShark.
+This repository contains code related to the Python module <i>PyShark</i>, which is a wrapper for the <i>Wireshark</i> command-line interface (CLI) for <i>TShark</i>. The latter using the <i>Wireshark</i>  dissectors to sniff and capture packets from a network inteface. The real power of <i>PyShark</i>  is its capability to access to all of the packet decoders built into <i>TShark</i>.
 </p>
 
 <p align="justify">
@@ -112,7 +112,7 @@ PyShark has a lot of flexibility to parse various types of information from an i
 
 <b>Example Two:</b>
 <br>
-This example shows how to access the field elements within the HTTP layer. The code below is query for all the URLs contained in a Packet Capture (PCAP) file.
+This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
 <br>
 
 `cap_file = 'traffic_flows_small.pcap'`<br>
