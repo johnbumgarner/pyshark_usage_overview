@@ -413,7 +413,31 @@ def get_retransmissions(parse_type, pcap_file, network_interface):
             if results is not None:
                 print(results)
 
+                
+#############################################################################################
+# This section is used to parse all the Uniform Resource Locators (URLs) from a standard 
+# Packet Capture (PCAP) file using PyShark.
+#############################################################################################
 
+
+def filter_all_urls_file(packet):
+    if hasattr(packet, 'http'):
+        field_names = packet.http._all_fields
+        field_values = packet.http._all_fields.values()
+        for field_name in field_names:
+            for field_value in field_values:
+                if field_name == 'http.request.full_uri' and field_value.startswith('http'):
+                    return field_value
+
+
+def get_urls_file_captures(pcap_file):
+    capture = pyshark.FileCapture(pcap_file)
+    for raw_packet in capture:
+        url = filter_all_urls_file(raw_packet)
+        if url is not None:
+            print(url)                
+
+            
 def main():
 
     # PCAP file to parse
@@ -432,6 +456,10 @@ def main():
 
     # Parse types include: file and live.
     # get_retransmissions('file', pcap_file, network_interface)
+    
+    # Prases all the Uniform Resource Locators (URLs) from
+    # a PCAP file.
+    # get_urls_file_captures(pcap_file)
 
 
 if __name__ == "__main__":
