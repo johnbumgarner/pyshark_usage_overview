@@ -57,32 +57,38 @@ All packets have layers, but these layers vary based on the packet type. These l
 
 <b>Common Layers:</b>
 <br>
-* ETH Layer
-* IP Layer
-* TCP Layer
-* UDP Layer
-* ARP Layer
+* ETH Layer - Ethernet
+* IP Layer - Internet Protocol
+* TCP Layer - Transmission Control Protocol
+* UDP Layer - User Datagram Protocol
+* ARP Layer - Address Resolution Protocol
 
 <b>Other Layers:</b>
 <br>
-* BROWSER Layer
-* DATA Layer
-* DB-LSP-DISC Layer
-* HTTP Layer
-* MAILSLOT Layer
-* NAT-PMP Layer
-* NBDGM Layer
-* NBNS Layer
-* SMB Layer
-* SNMP Layer
-* SSDP Layer
-* TLS Layer
-* XML Layer
+* BROWSER Layer - Web browser
+* DATA Layer - Normal data payload of a protocol
+* DB-LSP-DISC Layer - Dropbox LAN Sync Discovery
+* DHCP Layer - Dynamic Host Configuration Protocol
+* HTTP Layer - Hypertext Transfer Protocol
+* LLMNR Layer - Link-Local Multicast Name Resolution
+* MAILSLOT Layer - Mailslot protocol is part of the SMB protocol family
+* MSNMS Layer - Microsoft Network Messenger Service
+* NAT-PMP Layer - NAT Port Mapping Protocol
+* NBDGM Layer - NetBIOS Datagram Service
+* NBNS Layer - NetBIOS Name Service
+* SMB Layer - Server Message Block
+* SNMP Layer - Simple Network Management Protocol 
+* SSDP Layer - Simple Service Discovery Protocol 
+* TLS Layer - Transport Layer Security,
+* XML Layer - Extensible Markup Language
 </p>
 
 ### Parsing examples:
 <p align="justify">
-PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed.
+PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed using the transport_layer and IP layer.
+<br>
+
+<b>Example One:</b>
 <br>
 
 `protocol = packet.transport_layer`<br>
@@ -103,10 +109,6 @@ Destination address: 192.168.3.131<br>
 Destination port: 58673<br>
 Date and Time: 2011-01-25 13:57:18.356677<br>
 Timestamp: 1295981838.356677000<br>
-</p>
-
-<p align="justify">
-
 </p>
 
 ## Prerequisites
