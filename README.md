@@ -98,10 +98,9 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `destination_port = packet[packet.transport_layer].dstport`<br>
 `packet_time = packet.sniff_time`<br>
 `packet_timestamp = packet.sniff_timestamp`<br>
-</p>
 
-#### Output:
-<p align="justify">
+<b>Output Example One:</b>
+<br>
 Protocol type: UDP<br>
 Source address: 192.168.3.1<br>
 Source port: 53<br>
