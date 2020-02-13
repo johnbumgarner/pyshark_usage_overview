@@ -418,8 +418,6 @@ def get_retransmissions(parse_type, pcap_file, network_interface):
 # This section is used to parse all the Uniform Resource Locators (URLs) from a standard 
 # Packet Capture (PCAP) file using PyShark.
 #############################################################################################
-
-
 def filter_all_urls_file(packet):
     if hasattr(packet, 'http'):
         field_names = packet.http._all_fields
