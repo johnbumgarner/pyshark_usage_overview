@@ -111,7 +111,9 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `Timestamp: 1295981838.356677000`<br>
 
 <b>Example Two:</b>
+
 <br>
+
 `cap_file = 'traffic_flows_small.pcap'`<br>
 `capture = pyshark.FileCapture(pcap_file)`<br>
 `for packet in capture:`<br>
@@ -122,6 +124,9 @@ PyShark has a lot of flexibility to parse various types of information from an i
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`for field_value in field_values:`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`if field_name == 'http.request.full_uri' and field_value.startswith('http'):`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`print(f'{field_value}')`<br>
+
+<b>Output Example Two:</b>
+<br>
 </p>
 
 ## Prerequisites
