@@ -116,9 +116,9 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `capture = pyshark.FileCapture(pcap_file)`<br>
 `for packet in capture:`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`if hasattr(packet, 'http'):`<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`field_names = packet.http._all_fields`<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`field_values = packet.http._all_fields.values()`<br>
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`for field_name in field_names:`<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`field_names = packet.http._all_fields`<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`field_values = packet.http._all_fields.values()`<br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`for field_name in field_names:`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`for field_value in field_values:`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`if field_name == 'http.request.full_uri' and field_value.startswith('http'):`<br>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;`print(f'{field_value}')`<br>
