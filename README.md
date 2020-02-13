@@ -15,7 +15,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i> is used in LiveCap
 
 ### Usage examples:
 <p align="justify">
-The examples below show how to parse Domain Name System (DNS) packets from either a Packet Capture (PCAP) file or from a TShark live capture session.
+The examples below show how to parse Domain Name System (DNS) packets from either a TShark live capture session or from a Packet Capture (PCAP) file.
 </p>
 
 <p align="justify">
@@ -48,6 +48,17 @@ or
 &nbsp; &nbsp; &nbsp; &nbsp;`if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':`<br>
 </p>
 
+### Accessing packet data:
+<p align="justify">
+All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted.   
+<br>
+Layer types can be accessed using the following parameter:
+<br>
+`packet.layers`<br>
+
+</p>
+
+
 
 ### Parsing examples:
 <p align="justify">
@@ -72,6 +83,10 @@ Destination address: 192.168.3.131<br>
 Destination port: 58673<br>
 Date and Time: 2011-01-25 13:57:18.356677<br>
 Timestamp: 1295981838.356677000<br>
+</p>
+
+<p align="justify">
+
 </p>
 
 ## Prerequisites
