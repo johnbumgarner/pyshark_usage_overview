@@ -111,6 +111,7 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `Timestamp: 1295981838.356677000`<br>
 
 <b>Example Two:</b>
+<br>
 This example shows how to access the field elements within the HTTP layer. The code below is query for all the URLs contained in a Packet Capture (PCAP) file.
 <br>
 
@@ -127,6 +128,7 @@ This example shows how to access the field elements within the HTTP layer. The c
 
 <b>Output Example Two:</b>
 <br>
+
 `https://stackoverflow.com/questions/tagged/python`<br>
 `https://stackoverflow.com/questions/tagged/python-3.x`<br>
 `https://stackoverflow.com/search?q=pyshark`<br>
