@@ -47,7 +47,7 @@ or
 &nbsp; &nbsp; &nbsp; &nbsp;`if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':`<br>
 </p>
 
-### Accessing packet data:
+### Accessing packet data elements:
 <p align="justify">
 All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted. Layer types can be accessed using the following parameter:
 <br>
