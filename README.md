@@ -50,14 +50,15 @@ or
 
 ### Accessing packet data:
 <p align="justify">
-All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted.   
+All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted. Layer types can be accessed using the following parameter:
 <br>
-Layer types can be accessed using the following parameter:
-<br>
+
 `packet.layers`<br>
 
 </p>
 
+
+[<ETH Layer>, <IP Layer>, <TCP Layer>, <DATA Layer>, <HTTP Layer>, <XML Layer>]
 
 
 ### Parsing examples:
