@@ -109,7 +109,9 @@ PyShark has a lot of flexibility to parse various types of information from an i
 `Date and Time: 2011-01-25 13:57:18.356677`<br>
 `Timestamp: 1295981838.356677000`<br>
 
-<b>Example Two:</b><br>
+<b>Example Two:</b>
+<br>
+<br>
 This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
 <br>
 
