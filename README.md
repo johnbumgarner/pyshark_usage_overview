@@ -1,7 +1,7 @@
 # Overview Packet Analysis
 
 <p align="justify">
-This repository contains code related to the Python module <i>PyShark</i>, which is a wrapper for the <i>Wireshark</i> command-line interface (CLI) for <i>TShark</i>. The latter using the <i>Wireshark</i>  dissectors to sniff and capture packets from a network inteface. The real power of <i>PyShark</i>  is its capability to access to all of the packet decoders built into <i>TShark</i>.
+This repository contains code related to the Python module <b>PyShark</b>, which is a wrapper for the <b>Wireshark</b> command-line interface (CLI) for <b>TShark</b>. The latter using the Wireshark dissectors to sniff and capture packets from a network inteface. The real power of PyShark is its capability to access to all of the packet decoders built into TShark.
 </p>
 
 <p align="justify">
