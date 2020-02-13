@@ -152,7 +152,7 @@ The package Wireshark installs the command line utility TShark. The command used
 
 ## Notes:
 <p align="justify">
-<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
+<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark:](https://kiminewt.github.io/pyshark)[PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
 </p>
 
 _The code within this repository is **not** production ready. It was **strictly** designed for experimental testing purposes only._
