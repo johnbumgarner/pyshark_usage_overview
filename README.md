@@ -101,14 +101,13 @@ PyShark has a lot of flexibility to parse various types of information from an i
 
 <b>Output Example One:</b>
 <br>
-<br>
-Protocol type: UDP<br>
-Source address: 192.168.3.1<br>
-Source port: 53<br>
-Destination address: 192.168.3.131<br>
-Destination port: 58673<br>
-Date and Time: 2011-01-25 13:57:18.356677<br>
-Timestamp: 1295981838.356677000<br>
+`Protocol type: UDP`<br>
+`Source address: 192.168.3.1`<br>
+`Source port: 53`<br>
+`Destination address: 192.168.3.131`<br>
+`Destination port: 58673`<br>
+`Date and Time: 2011-01-25 13:57:18.356677`<br>
+`Timestamp: 1295981838.356677000`<br>
 </p>
 
 ## Prerequisites
