@@ -85,7 +85,7 @@ All packets have layers, but these layers vary based on the packet type. These l
 ### Parsing examples:
 <p align="justify">
 PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed using the transport_layer and IP layer.
-<br>
+</p>
 
 <b>Example One:</b>
 <br>
