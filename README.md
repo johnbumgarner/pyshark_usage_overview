@@ -151,7 +151,8 @@ The package Wireshark installs the command line utility TShark. The command used
 * [Wireshark:](https://www.wireshark.org) Wireshark is a network packet analysis tool that captures packets in real time and displays them in a graphic interface.
 
 ## Notes:
+<p align="justify">
+<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
+</p>
 
 _The code within this repository is **not** production ready. It was **strictly** designed for experimental testing purposes only._
-<br>
-<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
