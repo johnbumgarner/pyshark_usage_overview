@@ -63,24 +63,22 @@ All packets have layers, but these layers vary based on the packet type. These l
 * UDP Layer
 * ARP Layer
 
-
-TLS Layer
-DATA Layer
-HTTP Layer
-XML Layer
-DB-LSP-DISC Layer
-SMB Layer
-NBDGM Layer
-NBNS Layer
-SSDP Layer
-NAT-PMP Layer
-SNMP Layer
-BROWSER Layer
-MAILSLOT Layer
-XML Layer
+<b>Other Layers:</b>
+<br>
+* BROWSER Layer
+* DATA Layer
+* DB-LSP-DISC Layer
+* HTTP Layer
+* MAILSLOT Layer
+* NAT-PMP Layer
+* NBDGM Layer
+* NBNS Layer
+* SMB Layer
+* SNMP Layer
+* SSDP Layer
+* TLS Layer
+* XML Layer
 </p>
-
-
 
 ### Parsing examples:
 <p align="justify">
