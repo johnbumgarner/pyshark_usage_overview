@@ -5,8 +5,7 @@ This repository contains code related to the Python module <b>PyShark</b>, which
 </p>
 
 <p align="justify">
-PyShark can operate in either LiveCapture or FileCapture modes. Both modes have methods that can be used to parse specific
-packet level attributes, which includes protocols and their associated ports. 
+PyShark can operate in either <b>LiveCapture</b> or <b>FileCapture</b> modes. Both modes have methods that can be used to parse specific packet level attributes, which includes protocols and their associated ports. 
 </p>
 
 <p align="justify">
@@ -154,3 +153,6 @@ The package Wireshark installs the command line utility TShark. The command used
 ## Notes:
 
 _The code within this repository is **not** production ready. It was **strictly** designed for experimental testing purposes only._
+
+<br>
+<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the [PyShark GitHub repository](https://github.com/KimiNewt/pyshark). Several of the parameters listed in this ReadMe were pulled from the source code.
