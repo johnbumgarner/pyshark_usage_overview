@@ -55,20 +55,32 @@ All packets have layers, but these layers vary based on the packet type. These l
 
 `packet.layers`<br>
 
+<b>Common Layers:</b>
+<br>
 * ETH Layer
+* IP Layer
+* TCP Layer
+* UDP Layer
+* ARP Layer
 
 
+TLS Layer
+DATA Layer
+HTTP Layer
+XML Layer
+DB-LSP-DISC Layer
+SMB Layer
+NBDGM Layer
+NBNS Layer
+SSDP Layer
+NAT-PMP Layer
+SNMP Layer
+BROWSER Layer
+MAILSLOT Layer
+XML Layer
 </p>
 
-[<ETH Layer>, <IP Layer>, <TCP Layer>, <DATA Layer>, <TLS Layer>, <TLS Layer>]
-[<ETH Layer>, <IP Layer>, <TCP Layer>, <DATA Layer>, <HTTP Layer>, <XML Layer>]
-<ARP Layer>]
-<UDP Layer>, <DB-LSP-DISC Layer>]
-<NBNS Layer>]
-<NBDGM Layer>, <SMB Layer>, <MAILSLOT Layer>, <BROWSER Layer>]
-[<ETH Layer>, <IP Layer>, <UDP Layer>, <SSDP Layer>]
-[<ETH Layer>, <IP Layer>, <UDP Layer>, <SNMP Layer>]
-<NAT-PMP Layer>]
+
 
 ### Parsing examples:
 <p align="justify">
