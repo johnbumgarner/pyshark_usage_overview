@@ -55,11 +55,20 @@ All packets have layers, but these layers vary based on the packet type. These l
 
 `packet.layers`<br>
 
+* ETH Layer
+
+
 </p>
 
-
+[<ETH Layer>, <IP Layer>, <TCP Layer>, <DATA Layer>, <TLS Layer>, <TLS Layer>]
 [<ETH Layer>, <IP Layer>, <TCP Layer>, <DATA Layer>, <HTTP Layer>, <XML Layer>]
-
+<ARP Layer>]
+<UDP Layer>, <DB-LSP-DISC Layer>]
+<NBNS Layer>]
+<NBDGM Layer>, <SMB Layer>, <MAILSLOT Layer>, <BROWSER Layer>]
+[<ETH Layer>, <IP Layer>, <UDP Layer>, <SSDP Layer>]
+[<ETH Layer>, <IP Layer>, <UDP Layer>, <SNMP Layer>]
+<NAT-PMP Layer>]
 
 ### Parsing examples:
 <p align="justify">
