@@ -135,7 +135,7 @@ This example shows how to access the field elements within the <i>HTTP layer</i>
 
 ## Prerequisites
 <p align="justify">
-TShark has to be installed and accessible via your $PATH, which Python queries for PyShark. For this experiment TShark was installed using [homebrew](https://brew.sh).<br>
+TShark has to be installed and accessible via your $PATH, which Python queries for PyShark. For this experiment TShark was installed using <b>Homebrew</b>.<br>
 
 The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
 
@@ -149,6 +149,8 @@ The package Wireshark installs the command line utility TShark. The command used
 * [TShark:](https://www.wireshark.org/docs/man-pages/tshark.html) TShark is a terminal oriented version of Wireshark designed for capturing and displaying packets when an interactive user interface isn't necessary or available.
 
 * [Wireshark:](https://www.wireshark.org) Wireshark is a network packet analysis tool that captures packets in real time and displays them in a graphic interface.
+
+* [Homebrew:](https://brew.sh) Package Manager for macOS and Linux.
 
 ## Notes:
 <p align="justify">
