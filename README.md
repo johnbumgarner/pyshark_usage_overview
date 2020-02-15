@@ -152,6 +152,10 @@ The package Wireshark installs the command line utility TShark. The command used
 
 * [Homebrew:](https://brew.sh) Package Manager for macOS and Linux.
 
+* [Berkeley Packet Filter (BPF) syntax](https://biot.com/capstats/bpf.html)
+
+* [Display Filter syntax](https://wiki.wireshark.org/DisplayFilters)
+
 ## Notes:
 <p align="justify">
 <b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the PyShark GitHub repository. Several of the parameters listed in this README were pulled directly from the source code.
