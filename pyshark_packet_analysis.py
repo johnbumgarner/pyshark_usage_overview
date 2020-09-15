@@ -1,3 +1,27 @@
+#!/usr/local/bin/python3
+
+##################################################################################
+# “AS-IS” Clause
+#
+# Except as represented in this agreement, all work produced by Developer is
+# provided “AS IS”. Other than as provided in this agreement, Developer makes no
+# other warranties, express or implied, and hereby disclaims all implied warranties,
+# including any warranty of merchantability and warranty of fitness for a particular
+# purpose.
+##################################################################################
+
+##################################################################################
+#
+# Date Completed: February 15, 2020
+# Author: John Bumgarner
+#
+# Date Revised:
+# Revised by:
+#
+# This Python script is designed to process, filter and analyze .pcap files using 
+# the Python module PyShark.
+##################################################################################
+
 #############################################################################################
 # The Python module PyShark is a wrapper for the Wireshark CLI (TShark).
 #
