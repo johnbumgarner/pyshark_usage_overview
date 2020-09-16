@@ -15,9 +15,7 @@ PyShark has two primary filters. The <i><b>BPF_Filter</b></i> is used in LiveCap
 ### Usage examples:
 <p align="justify">
 The examples below show how to parse Domain Name System (DNS) packets from either a TShark live capture session or from a Packet Capture (PCAP) file.
-</p>
 
-<p align="justify">
 <i><b>BPF_Filter</b></i>
 
     capture = pyshark.LiveCapture(interface='en0', bpf_filter='udp port 53')
