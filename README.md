@@ -125,9 +125,9 @@ This example shows how to access the field elements within the <i>HTTP layer</i>
 <b>Output Example Two:</b>
 <br>
 
-`https://stackoverflow.com/questions/tagged/python`<br>
-`https://stackoverflow.com/questions/tagged/python-3.x`<br>
-`https://stackoverflow.com/search?q=pyshark`<br>
+    https://stackoverflow.com/questions/tagged/python
+    https://stackoverflow.com/questions/tagged/python-3.x
+    https://stackoverflow.com/search?q=pyshark
 </p>
 
 ## Prerequisites
