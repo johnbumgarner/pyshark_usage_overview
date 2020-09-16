@@ -22,27 +22,24 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
     capture.sniff(timeout=50)
     for raw_packet in capture.sniff_continuously():
       # do something with the raw_packet
-</p>
 
 
-<p align="justify">
 <i><b>Display_Filter</b></i>
   
     capture = pyshark.FileCapture(pcap_file, display_filter='dns')
     for raw_packet in capture:
       # do something with the raw_packet
-</p>
 
 <i><b>Function Level Filtering</b></i>
-<p align="justify">
+
 This type of packet filtering does not use the built-in PyShark's functions BPF_Filter or Display_Filter.<br>
 
     if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':
 
 or
 
-   if hasattr(packet, 'tcp'):
-     if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
+    if hasattr(packet, 'tcp'):
+      if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
 </p>
 
 ### Accessing packet data elements:
@@ -83,10 +80,9 @@ All packets have layers, but these layers vary based on the packet type. These l
 ### Parsing examples:
 <p align="justify">
 PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed using the transport_layer and IP layer.
-</p>
+
 
 <b>Example One:</b>
-<br>
 
     protocol = packet.transport_layer
     source_address = packet.ip.src
@@ -97,7 +93,7 @@ PyShark has a lot of flexibility to parse various types of information from an i
     packet_timestamp = packet.sniff_timestamp
 
 <b>Output Example One:</b>
-<br>
+
 
     Protocol type: UDP
     Source address: 192.168.3.1
@@ -107,7 +103,10 @@ PyShark has a lot of flexibility to parse various types of information from an i
     Date and Time: 2011-01-25 13:57:18.356677
     Timestamp: 1295981838.356677000
 
+</p>
+
 <b>Example Two:</b>
+
 <p align="justify">
 This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
 </p>
@@ -137,7 +136,7 @@ TShark has to be installed and accessible via your $PATH, which Python queries f
 
 The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
 
-   brew install wireshark
+    brew install wireshark
 </p>
 
 ## References:
