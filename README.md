@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/johnbumgarner/pyshark_packet_analysis/blob/master/graphic/binary_funnel.jpg"/>
+</p>
+
+
 # Overview Packet Analysis
 
 <p align="justify">
