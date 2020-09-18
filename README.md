@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/johnbumgarner/pyshark_packet_analysis/blob/b9d356611ecbffe164cb9677347c32b00ad55009/graphic/binary_funnel.jpg" width="200" height="300"/>
+  <img src="https://github.com/johnbumgarner/pyshark_packet_analysis/blob/b9d356611ecbffe164cb9677347c32b00ad55009/graphic/binary_funnel.jpg" width="100" height="200"/>
 </p>
 
 
