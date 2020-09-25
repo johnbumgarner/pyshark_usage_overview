@@ -58,7 +58,7 @@ if hasattr(packet, 'tcp'):
 All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted. Layer types can be accessed using the following parameter:
 <br>
   
-```python
+```
 packet.layers
 ```
 
@@ -154,7 +154,7 @@ TShark has to be installed and accessible via your $PATH, which Python queries f
 The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
 
 ```
-    brew install wireshark
+brew install wireshark
 ```   
 </p>
 
