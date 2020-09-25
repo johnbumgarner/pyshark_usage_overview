@@ -96,7 +96,7 @@ PyShark has a lot of flexibility to parse various types of information from an i
 
 
 <b>Example One:</b>
-```python
+```
 protocol = packet.transport_layer
 source_address = packet.ip.src
 source_port = packet[packet.transport_layer].srcport
@@ -140,7 +140,7 @@ for packet in capture:
 
 <b>Output Example Two:</b>
 <br>
-```python
+```
 https://stackoverflow.com/questions/tagged/python
 https://stackoverflow.com/questions/tagged/python-3.x
 https://stackoverflow.com/search?q=pyshark
