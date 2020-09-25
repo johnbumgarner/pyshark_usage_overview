@@ -23,36 +23,44 @@ The examples below show how to parse Domain Name System (DNS) packets from eithe
 
 <i><b>BPF_Filter</b></i>
 
-    capture = pyshark.LiveCapture(interface='en0', bpf_filter='udp port 53')
-    capture.sniff(timeout=50)
-    for raw_packet in capture.sniff_continuously():
-      # do something with the raw_packet
-
+```python
+capture = pyshark.LiveCapture(interface='en0', bpf_filter='udp port 53')
+capture.sniff(timeout=50)
+for raw_packet in capture.sniff_continuously():
+   # do something with the raw_packet
+```
 
 <i><b>Display_Filter</b></i>
-  
-    capture = pyshark.FileCapture(pcap_file, display_filter='dns')
-    for raw_packet in capture:
-      # do something with the raw_packet
+ 
+ ```python
+ capture = pyshark.FileCapture(pcap_file, display_filter='dns')
+ for raw_packet in capture:
+    # do something with the raw_packet
+```
 
 <i><b>Function Level Filtering</b></i>
 
 This type of packet filtering does not use the built-in PyShark's functions BPF_Filter or Display_Filter.<br>
 
-    if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':
-
+```python
+if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':
+```
 or
 
-    if hasattr(packet, 'tcp'):
-      if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
+```python
+if hasattr(packet, 'tcp'):
+  if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
+```
 </p>
 
 ### Accessing packet data elements:
 <p align="justify">
 All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted. Layer types can be accessed using the following parameter:
 <br>
-
-    packet.layers
+  
+```python
+packet.layers
+```
 
 <b>Common Layers:</b>
 <br>
@@ -88,26 +96,27 @@ PyShark has a lot of flexibility to parse various types of information from an i
 
 
 <b>Example One:</b>
-
-    protocol = packet.transport_layer
-    source_address = packet.ip.src
-    source_port = packet[packet.transport_layer].srcport
-    destination_address = packet.ip.dst
-    destination_port = packet[packet.transport_layer].dstport 
-    packet_time = packet.sniff_time
-    packet_timestamp = packet.sniff_timestamp
+```python
+protocol = packet.transport_layer
+source_address = packet.ip.src
+source_port = packet[packet.transport_layer].srcport
+destination_address = packet.ip.dst
+destination_port = packet[packet.transport_layer].dstport 
+packet_time = packet.sniff_time
+packet_timestamp = packet.sniff_timestamp
+```
 
 <b>Output Example One:</b>
 
-
-    Protocol type: UDP
-    Source address: 192.168.3.1
-    Source port: 53
-    Destination address: 192.168.3.131
-    Destination port: 58673
-    Date and Time: 2011-01-25 13:57:18.356677
-    Timestamp: 1295981838.356677000
-
+```python
+Protocol type: UDP
+Source address: 192.168.3.1
+Source port: 53
+Destination address: 192.168.3.131
+Destination port: 58673
+Date and Time: 2011-01-25 13:57:18.356677
+Timestamp: 1295981838.356677000
+```
 </p>
 
 <b>Example Two:</b>
@@ -116,23 +125,26 @@ PyShark has a lot of flexibility to parse various types of information from an i
 This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
 </p>
 
-    cap_file = 'traffic_flows_small.pcap'
-    capture = pyshark.FileCapture(pcap_file)
-    for packet in capture:
-       if hasattr(packet, 'http'):
-         field_names = packet.http._all_fields
-         field_values = packet.http._all_fields.values()
-         for field_name in field_names:
-            for field_value in field_values:
-               if field_name == 'http.request.full_uri' and field_value.startswith('http'):
-                 print(f'{field_value}')
+```python
+cap_file = 'traffic_flows_small.pcap'
+capture = pyshark.FileCapture(pcap_file)
+for packet in capture:
+   if hasattr(packet, 'http'):
+     field_names = packet.http._all_fields
+     field_values = packet.http._all_fields.values()
+     for field_name in field_names:
+        for field_value in field_values:
+           if field_name == 'http.request.full_uri' and field_value.startswith('http'):
+             print(f'{field_value}')
+```
 
 <b>Output Example Two:</b>
 <br>
-
-    https://stackoverflow.com/questions/tagged/python
-    https://stackoverflow.com/questions/tagged/python-3.x
-    https://stackoverflow.com/search?q=pyshark
+```python
+https://stackoverflow.com/questions/tagged/python
+https://stackoverflow.com/questions/tagged/python-3.x
+https://stackoverflow.com/search?q=pyshark
+```
 </p>
 
 ## Prerequisites
@@ -141,7 +153,9 @@ TShark has to be installed and accessible via your $PATH, which Python queries f
 
 The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
 
+```
     brew install wireshark
+```   
 </p>
 
 ## References:
