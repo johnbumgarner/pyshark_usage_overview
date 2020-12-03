@@ -147,6 +147,21 @@ https://stackoverflow.com/search?q=pyshark
 ```
 </p>
 
+### Additional parsing examples:
+
+<p align="justify"> Here are some additional parsing examples that I posted to <b>GitHub Gist</b>.
+  
+</p>
+
+* <a href="https://gist.github.com/johnbumgarner/b758aa24c768655940cd3352ce2a0921">Extract the conversation header information from a PCAP packet</a>
+
+* <a href="https://gist.github.com/johnbumgarner/166b6371f975c8e0a0aeae2516771039">Extract DNS elements from a PCAP packet</a>
+
+* <a href="https://https://gist.github.com/johnbumgarner/ff8c463dc668648dd9ffb0a9a9d939bc">Extract the HTTP information from IPv4 and ICMPv6 packets</a>
+
+* <a href="https://gist.github.com/johnbumgarner/9594e36a31bf1e220838160c37bfc7d4">Extract specific IPv6 elements from a PCAP packet</a>
+
+
 ## Prerequisites
 <p align="justify">
 TShark has to be installed and accessible via your $PATH, which Python queries for PyShark. For this experiment TShark was installed using <b>Homebrew</b>.<br>
