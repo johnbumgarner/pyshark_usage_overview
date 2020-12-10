@@ -157,7 +157,7 @@ https://stackoverflow.com/search?q=pyshark
 
 * <a href="https://gist.github.com/johnbumgarner/166b6371f975c8e0a0aeae2516771039">Extract DNS elements from a PCAP packet</a>
 
-* <a href="https://https://gist.github.com/johnbumgarner/ff8c463dc668648dd9ffb0a9a9d939bc">Extract the HTTP information from IPv4 and ICMPv6 packets</a>
+* <a href="https://gist.github.com/johnbumgarner/ff8c463dc668648dd9ffb0a9a9d939bc">Extract the HTTP information from IPv4 and ICMPv6 packets</a>
 
 * <a href="https://gist.github.com/johnbumgarner/9594e36a31bf1e220838160c37bfc7d4">Extract specific IPv6 elements from a PCAP packet</a>
 
