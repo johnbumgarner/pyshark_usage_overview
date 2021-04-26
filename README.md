@@ -13,24 +13,61 @@ This repository contains code related to the Python module <b>PyShark</b>, which
 PyShark can operate in either <b>LiveCapture</b> or <b>FileCapture</b> modes. Both modes have methods that can be used to parse specific packet level attributes, which includes protocols and their associated ports. 
 </p>
 
-<p align="justify">
-PyShark has two primary filters. The <i><b>BPF_Filter</b></i> is used in LiveCapture mode. The <i><b>Display_Filter</b></i> is used in FileCapture mode.
-</p>
 
-### Usage examples:
-<p align="justify">
-The examples below show how to parse Domain Name System (DNS) packets from either a TShark live capture session or from a Packet Capture (PCAP) file.
+### LiveCapture Usage examples:
 
-<i><b>BPF_Filter</b></i>
+<i><b>Basic Capture</b></i>
 
 ```python
-capture = pyshark.LiveCapture(interface='en0', bpf_filter='udp port 53')
-capture.sniff(timeout=50)
-for raw_packet in capture.sniff_continuously():
+capture = pyshark.LiveCapture(interface='your capture interface')
+for packet in capture:
+   # do something with the packet
+```
+
+<i><b>LiveCapture with packet count</b></i>
+
+<p align="justify">
+PyShark LiveCapture has a featured named <i><b>sniff_continuously</b></i> that allows you to limit the number of packets captured. 
+</p>
+
+```python
+capture = pyshark.LiveCapture(interface='your capture interface')
+for packet in capture.sniff_continuously(packet_count=10):
+   # do something with the packet
+```
+
+<i><b>LiveCapture with timeout</b></i>
+
+<p align="justify">
+PyShark LiveCapture also has a featured named <i><b>sniff</b></i>< that allows you to set a capture timeout period. 
+</p>
+
+```python
+capture = pyshark.LiveCapture(interface='your capture interface')
+capture.sniff(timeout=10)
+packets = [pkt for pkt in capture._packets]
+capture.close()
+for packet in packets:
+   # do something with the packet
+```
+
+<i><b>LiveCapture with BPF_Filter</b></i>
+
+<p align="justify">
+The PyShark LiveCapture mode has a <i><b>BPF_Filter</b></i> that allows you to prefilter the packets being captured. The example below show how to parse Domain Name System (DNS) packets from a LiveCapture session.
+</p>
+
+```python
+capture = pyshark.LiveCapture(interface='your capture interface', bpf_filter='udp port 53')
+for packet in capture:
    # do something with the raw_packet
 ```
 
-<i><b>Display_Filter</b></i>
+<p align="justify">
+The FileCapture mode of PyShark also has prefilter capabilities via the <i><b>Display_Filter</b></i>. The example below show how to parse Domain Name System (DNS) packets from a FileCapture session.
+</p>
+
+<i><b>FileCapture Display_Filter</b></i>
  
  ```python
  capture = pyshark.FileCapture(pcap_file, display_filter='dns')
