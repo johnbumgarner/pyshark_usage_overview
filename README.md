@@ -60,7 +60,7 @@ The PyShark LiveCapture mode has a <i><b>BPF_Filter</b></i> that allows you to p
 ```python
 capture = pyshark.LiveCapture(interface='your capture interface', bpf_filter='udp port 53')
 for packet in capture:
-   # do something with the raw_packet
+   # do something with the packet
 ```
 
 <p align="justify">
@@ -71,8 +71,8 @@ The FileCapture mode of PyShark also has prefilter capabilities via the <i><b>Di
  
  ```python
  capture = pyshark.FileCapture(pcap_file, display_filter='dns')
- for raw_packet in capture:
-    # do something with the raw_packet
+ for packet in capture:
+    # do something with the packet
 ```
 
 <i><b>Function Level Filtering</b></i>
