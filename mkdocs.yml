@@ -15,18 +15,18 @@ copyright: Copyright &copy; 2020 John Bumgarner
 # Navigation Tree
 nav:
     - Home: index.md
-    - Basic Usage: basic_usage.md
-    - Parameters: parameters.md
-    - Output Formats: output_formats.md
-    - Additional Features: features.md
-    - Language Translations: language_translation.md
-    - Dependencies: dependencies.md
-    - Limitations: limitations.md
+    # - Basic Usage: basic_usage.md
+    # - Parameters: parameters.md
+    # - Output Formats: output_formats.md
+    # - Additional Features: features.md
+   #  - Language Translations: language_translation.md
+   #  - Dependencies: dependencies.md
+    # - Limitations: limitations.md
     # - Troubleshooting: troubleshooting.md
-    - Code of Conduct: code_of_conduct.md
-    - Contributing: contributing.md
-    - License: license.md
-    - Release Notes: release-notes.md
+    # - Code of Conduct: code_of_conduct.md
+    #  - Contributing: contributing.md
+    # - License: license.md
+    #  - Release Notes: release-notes.md
    
 
 # Configuration
