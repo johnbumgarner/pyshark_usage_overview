@@ -1,28 +1,33 @@
-# Overview Packet Analysis
+# Overview
 
 <p align="justify">
-This repository contains code related to the Python module <b>PyShark</b>, which is a wrapper for the <b>Wireshark</b> command-line interface (CLI) for <b>TShark</b>. The latter using the Wireshark dissectors to sniff and capture packets from a network inteface. The real power of PyShark is its capability to access to all of the packet decoders built into TShark.
-</p>
-
-<p align="justify">
-PyShark can operate in either <b>LiveCapture</b> or <b>FileCapture</b> modes. Both modes have methods that can be used to parse specific packet level attributes, which includes protocols and their associated ports. 
+This repository contains usage documentation for the <b>Python</b> module <b>PyShark</b>. This <b>Python</b> module is a wrapper for <b>TShark</b>, which is command-line interface (CLI) for <b>Wireshark</b>. The latter is used to sniff and capture packets from a network interface. The real power of <b>PyShark</b> is its capability to access all of the packet decoders built into <b>TShark</b>.
 </p>
 
 
-### LiveCapture Usage examples:
+<p align="justify">
+This repository also contains some basic parsing examples, which are also contained in the usage documentation that I developed for <b>PyShark</b>.
+</p>
 
-<i><b>Basic Capture</b></i>
+
+# LiveCapture Usage examples
+
+## Basic Capture
 
 ```python
+import pyshark 
+
 capture = pyshark.LiveCapture(interface='your capture interface')
 for packet in capture:
    # do something with the packet
 ```
 
-<i><b>LiveCapture with packet count</b></i>
+## LiveCapture with packet count
 
 <p align="justify">
-PyShark LiveCapture has a featured named <i><b>sniff_continuously</b></i> that allows you to limit the number of packets captured. 
+
+<b>PyShark LiveCapture</b> has a featured named <i>sniff_continuously</i> that allows you to limit the number of packets captured. 
+
 </p>
 
 ```python
@@ -31,13 +36,15 @@ for packet in capture.sniff_continuously(packet_count=10):
    # do something with the packet
 ```
 
-<i><b>LiveCapture with timeout</b></i>
+## LiveCapture with timeout
 
 <p align="justify">
-PyShark LiveCapture also has a featured named <i><b>sniff</b></i>< that allows you to set a capture timeout period. 
+<b>PyShark LiveCapture</b> also has a featured named <i>sniff</i> that allows you to set a capture timeout period. 
 </p>
 
 ```python
+import pyshark 
+
 capture = pyshark.LiveCapture(interface='your capture interface')
 capture.sniff(timeout=10)
 packets = [pkt for pkt in capture._packets]
@@ -46,142 +53,25 @@ for packet in packets:
    # do something with the packet
 ```
 
-<i><b>LiveCapture with BPF_Filter</b></i>
+## LiveCapture with BPF_Filter
 
 <p align="justify">
-The PyShark LiveCapture mode has a <i><b>BPF_Filter</b></i> that allows you to prefilter the packets being captured. The example below show how to parse Domain Name System (DNS) packets from a LiveCapture session.
+The <b>PyShark LiveCapture</b> mode has a <i>BPF_Filter</i> that allows you to prefilter the packets being captured. The example below show how to parse Domain Name System (DNS) packets from a LiveCapture session.
 </p>
 
 ```python
+import pyshark 
+
 capture = pyshark.LiveCapture(interface='your capture interface', bpf_filter='udp port 53')
 for packet in capture:
    # do something with the packet
 ```
 
-<p align="justify">
-The FileCapture mode of PyShark also has prefilter capabilities via the <i><b>Display_Filter</b></i>. The example below show how to parse Domain Name System (DNS) packets from a FileCapture session.
-</p>
+# Additional parsing examples
 
-<i><b>FileCapture Display_Filter</b></i>
- 
- ```python
- capture = pyshark.FileCapture(pcap_file, display_filter='dns')
- for packet in capture:
-    # do something with the packet
-```
+<p align="justify"> 
 
-<i><b>Function Level Filtering</b></i>
-
-This type of packet filtering does not use the built-in PyShark's functions BPF_Filter or Display_Filter.<br>
-
-```python
-if hasattr(packet, 'udp') and packet[packet.transport_layer].dstport == '53':
-```
-or
-
-```python
-if hasattr(packet, 'tcp'):
-  if packet[packet.transport_layer].dstport == '80' or packet[packet.transport_layer].dstport == '443':
-```
-</p>
-
-### Accessing packet data elements:
-<p align="justify">
-All packets have layers, but these layers vary based on the packet type. These layers can be queried and the data elements within these layers can be extracted. Layer types can be accessed using the following parameter:
-<br>
-  
-```
-packet.layers
-```
-
-<b>Common Layers:</b>
-<br>
-* ETH Layer - Ethernet
-* IP Layer - Internet Protocol
-* TCP Layer - Transmission Control Protocol
-* UDP Layer - User Datagram Protocol
-* ARP Layer - Address Resolution Protocol
-
-<b>Other Layers:</b>
-<br>
-* BROWSER Layer - Web browser
-* DATA Layer - Normal data payload of a protocol
-* DB-LSP-DISC Layer - Dropbox LAN Sync Discovery
-* DHCP Layer - Dynamic Host Configuration Protocol
-* HTTP Layer - Hypertext Transfer Protocol
-* LLMNR Layer - Link-Local Multicast Name Resolution
-* MAILSLOT Layer - Mailslot protocol is part of the SMB protocol family
-* MSNMS Layer - Microsoft Network Messenger Service
-* NAT-PMP Layer - NAT Port Mapping Protocol
-* NBDGM Layer - NetBIOS Datagram Service
-* NBNS Layer - NetBIOS Name Service
-* SMB Layer - Server Message Block
-* SNMP Layer - Simple Network Management Protocol 
-* SSDP Layer - Simple Service Discovery Protocol 
-* TLS Layer - Transport Layer Security,
-* XML Layer - Extensible Markup Language
-</p>
-
-### Parsing examples:
-<p align="justify">
-PyShark has a lot of flexibility to parse various types of information from an individual network packet. Below are some of the items that can be parsed using the transport_layer and IP layer.
-
-
-<b>Example One:</b>
-```
-protocol = packet.transport_layer
-source_address = packet.ip.src
-source_port = packet[packet.transport_layer].srcport
-destination_address = packet.ip.dst
-destination_port = packet[packet.transport_layer].dstport 
-packet_time = packet.sniff_time
-packet_timestamp = packet.sniff_timestamp
-```
-
-<b>Output Example One:</b>
-
-```python
-Protocol type: UDP
-Source address: 192.168.3.1
-Source port: 53
-Destination address: 192.168.3.131
-Destination port: 58673
-Date and Time: 2011-01-25 13:57:18.356677
-Timestamp: 1295981838.356677000
-```
-</p>
-
-<b>Example Two:</b>
-
-<p align="justify">
-This example shows how to access the field elements within the <i>HTTP layer</i>. The code below queries a Packet Capture (PCAP) file for all the URLs within the <i>HTTP layer</i> with the field name <i>request.full_uri</i>.
-</p>
-
-```python
-cap_file = 'traffic_flows_small.pcap'
-capture = pyshark.FileCapture(pcap_file)
-for packet in capture:
-   if hasattr(packet, 'http'):
-     field_names = packet.http._all_fields
-     field_values = packet.http._all_fields.values()
-     for field_name in field_names:
-        for field_value in field_values:
-           if field_name == 'http.request.full_uri' and field_value.startswith('http'):
-             print(f'{field_value}')
-```
-
-<b>Output Example Two:</b>
-<br>
-```
-https://stackoverflow.com/questions/tagged/python
-https://stackoverflow.com/questions/tagged/python-3.x
-https://stackoverflow.com/search?q=pyshark
-```
-</p>
-
-### Additional parsing examples:
-
-<p align="justify"> Here are some additional parsing examples that I posted to <b>GitHub Gist</b>.
+Here are some additional parsing examples that I posted to <b>GitHub Gist</b>.
   
 </p>
 
@@ -194,34 +84,43 @@ https://stackoverflow.com/search?q=pyshark
 * <a href="https://gist.github.com/johnbumgarner/9594e36a31bf1e220838160c37bfc7d4">Extract specific IPv6 elements from a PCAP packet</a>
 
 
-## Prerequisites
-<p align="justify">
-TShark has to be installed and accessible via your $PATH, which Python queries for PyShark. For this experiment TShark was installed using <b>Homebrew</b>.<br>
+# Stack Overflow answers
 
-The package Wireshark installs the command line utility TShark. The command used to install Wireshark was:<br>
+<p align="justify"> 
 
-```
-brew install wireshark
-```   
+Here are some <a href="https://stackoverflow.com/search?q=user%3A6083423+pyshark">Stack Overflow answers</a> that I posted for questions about <b>PyShark<b>. 
+
 </p>
 
-## References:
 
-* [PyShark:](https://kiminewt.github.io/pyshark) Is the Python wrapper for TShark, that allows Python packet parsing using wireshark dissectors.
+# Prerequisites
 
-* [TShark:](https://www.wireshark.org/docs/man-pages/tshark.html) TShark is a terminal oriented version of Wireshark designed for capturing and displaying packets when an interactive user interface isn't necessary or available.
+<p align="justify">
 
-* [Wireshark:](https://www.wireshark.org) Wireshark is a network packet analysis tool that captures packets in real time and displays them in a graphic interface.
+<b>TShark</b> has to be installed and accessible via your $PATH, which <b>Python</b> queries for <b>PyShark</b>.  Reference the installation section of the usage documentation for details on how to install <b>TShark</b>. 
 
-* [Homebrew:](https://brew.sh) Package Manager for macOS and Linux.
+</p>
+
+# References
+
+* [PyShark:](https://kiminewt.github.io/pyshark) &nbsp; Is the <b>Python</b>. wrapper for <b>TShark</b>., that allows <b>Python</b>. packet parsing using <b>Wireshark</b>. dissectors.
+
+* [TShark:](https://www.wireshark.org/docs/man-pages/tshark.html) &nbsp; <b>TShark</b>. is a terminal oriented version of <b>Wireshark</b>. designed for capturing and displaying packets when an interactive user interface isn't necessary or available.
+
+* [Wireshark:](https://www.wireshark.org) &nbsp; <b>Wireshark</b> is a network packet analysis tool that captures packets in real time and displays them in a graphic interface.
+
+* [Homebrew:](https://brew.sh) &nbsp; Package Manager for macOS and Linux.
 
 * [Berkeley Packet Filter (BPF) syntax](https://biot.com/capstats/bpf.html)
 
 * [Display Filter syntax](https://wiki.wireshark.org/DisplayFilters)
 
-## Notes:
+# Notes
+
 <p align="justify">
-<b>PyShark</b> has limited documentation, so I would highly recommend reviewing the source code in the PyShark GitHub repository. Several of the parameters listed in this README were pulled directly from the source code.
+
+<b>PyShark</b> has limited documentation, so that is the reason why I developed the <b>PyShark</b> usage documentation within this repository for others to use. 
+
 </p>
 
 _The code within this repository is **not** production ready. It was **strictly** designed for experimental testing purposes only._
