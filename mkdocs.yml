@@ -1,37 +1,41 @@
 # Project information
-site_name: pyshark_packet_analysis
-site_url: https://github.com/johnbumgarner/pyshark_packet_analysis
+site_name: PyShark Usage Documentation
+site_url: https://github.com/johnbumgarner/pyshark_usage_overview
 site_author: John Bumgarner
-site_description: ""
+site_description: "PyShark is a Python 3 module. PyShark is a wrapper for TShark, which allowing Python packet parsing using Wireshark dissectors."
 
 # Repository
-repo_name: johnbumgarner/pyshark_packet_analysis
-repo_url: https://github.com/johnbumgarnerpyshark_packet_analysis
+repo_name: johnbumgarner/pyshark_usage_overview
+repo_url: https://github.com/johnbumgarner/pyshark_usage_overview
 edit_uri: ""
-
-# Copyright
-copyright: Copyright &copy; 2020 John Bumgarner
 
 # Navigation Tree
 nav:
     - Home: index.md
-    # - Basic Usage: basic_usage.md
-    # - Parameters: parameters.md
-    # - Output Formats: output_formats.md
-    # - Additional Features: features.md
-   #  - Language Translations: language_translation.md
-   #  - Dependencies: dependencies.md
-    # - Limitations: limitations.md
-    # - Troubleshooting: troubleshooting.md
-    # - Code of Conduct: code_of_conduct.md
-    #  - Contributing: contributing.md
-    # - License: license.md
-    #  - Release Notes: release-notes.md
+    - Installation: installation.md
+    - Usage:
+      - Basic Usage: capture_usage/basic_usage.md
+      - FileCapture Usage: capture_usage/file_capture_usage.md
+      - LiveCapture Usage: capture_usage/live_capture_usage.md
+    - Parameters:
+      - FileCapture Parameters: parameters/file_capture_parameters.md
+      - LiveCapture Parameters: parameters/live_capture_parameters.md
+      - RemoteCapture Parameters: parameters/remote_capture_parameters.md
+      - LiveRingCapture Parameters: parameters/livering_capture_parameters.md
+      - InMemCapture Parameters: parameters/inmem_capture_parameters.md
+      - PipeCapture Parameters: parameters/pipe_capture_parameters.md
+    - Packet Layers: packet_layers.md
+    - Parsing:
+      - Ethernet Packets: parsing/eth_packets.md
+      - IP Packets: parsing/ip_packets.md
+      - TCP Packets: parsing/tcp_packets.md
+      - UDP Packets: parsing/udp_packets.md
+    - Decoding Packets: decoding/decode_packets.md
+    - License: license.md
    
-
 # Configuration
 theme:
-    name: 'material'
+    name: material
     features:
         - navigation.tracking
         - navigation.expand
@@ -57,6 +61,14 @@ theme:
     favicon: assets/favicon.png
     icon:
         logo: logo
+extra_css: 
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css
+  - css/custom.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.js
+  - js/highlight-init.js
+  - js/custom.js
+  - js/copy-code.js
 
 
 # Extensions
@@ -78,5 +90,5 @@ extra:
       link: https://github.com/johnbumgarner
 
 # Plugins
-plugins:
-  - git-revision-date-localized
+#plugins:
+ # - git-revision-date-localized
