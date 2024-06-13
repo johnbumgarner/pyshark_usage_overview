@@ -1,0 +1,47 @@
+hr {
+    height: 1px;
+    border-width:0;
+    color:grey;
+    background-color: grey;
+}
+
+.code-block-container {
+    background-color: #f7f4ef
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.code-block {
+    background-color: #2e2e2e;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjust font size */
+    white-space : pre-wrap !important;
+    word-break: break-word;
+    overflow-wrap: break-word; /* Add for better compatibility */
+    overflow: auto; /* Add scrollbars if needed */
+    }
+
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #EAF2F8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px; /* Adjust font size */
+}
+
+.copy-btn svg {
+    width: 16px;
+    height: 16px;
+}
