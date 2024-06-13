@@ -1,9 +1,8 @@
 # Overview
 
 <p align="justify">
-This repository contains usage documentation for the <b>Python</b> module <b>PyShark</b>. This <b>Python</b> module is a wrapper for <b>TShark</b>, which is command-line interface (CLI) for <b>Wireshark</b>. The latter is used to sniff and capture packets from a network interface. The real power of <b>PyShark</b> is its capability to access all of the packet decoders built into <b>TShark</b>.
+This repository contains <a href="https://pyshark-packet-analysis.readthedocs.io/en/latest/">usage documentation</a> for the <b>Python</b> module <a href="https://github.com/KimiNewt/pyshark">PyShark</a>. This <b>Python</b> module is a wrapper for <b>TShark</b>, which is command-line interface (CLI) for <b>Wireshark</b>. The latter is used to sniff and capture packets from a network interface. The real power of <b>PyShark</b> is its capability to access all of the packet decoders built into <b>TShark</b>.
 </p>
-
 
 <p align="justify">
 This repository also contains some basic parsing examples, which are also contained in the usage documentation that I developed for <b>PyShark</b>.
