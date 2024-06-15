@@ -66,6 +66,20 @@ for packet in capture:
    # do something with the packet
 ```
 
+## LiveCapture with Display_Filter
+
+<p align="justify">
+The <b>PyShark LiveCapture</b> mode has a <i>Display_Filter</i> that allows you to prefilter the packets being captured. The example below show how to parse Domain Name System (DNS) packets from a LiveCapture session.
+</p>
+
+```python
+import pyshark 
+
+capture = pyshark.LiveCapture(interface='your capture interface', display_filter='dns')
+for packet in capture:
+   # do something with the packet
+```
+
 # Additional parsing examples
 
 <p align="justify"> 
