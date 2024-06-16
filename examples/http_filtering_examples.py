@@ -91,7 +91,7 @@ def filter_tls(network_interface: str, filter_type: str = 'transport_layer') -> 
     :param filter_type: The type of filter to apply ('transport_layer', 'bpf', or 'display').
     :type filter_type: str
 
-    :yields: Formatted FTP request or response information.
+    :yields: Formatted TLS (HTTPS) request or response information.
     :rtype: iter of str
     """
     if filter_type == 'transport_layer':
