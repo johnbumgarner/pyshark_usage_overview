@@ -16,6 +16,7 @@ This repository also contains some basic parsing examples, which are also contai
 ```python
 import pyshark 
 
+# Create a LiveCapture object to capture packets from the specified interface
 capture = pyshark.LiveCapture(interface='your capture interface')
 for packet in capture:
    # do something with the packet
@@ -30,7 +31,12 @@ for packet in capture:
 </p>
 
 ```python
+import pyshark 
+
+# Create a LiveCapture object to capture packets from the specified interface
 capture = pyshark.LiveCapture(interface='your capture interface')
+
+# Start capturing packets for a specified number of packets
 for packet in capture.sniff_continuously(packet_count=10):
    # do something with the packet
 ```
@@ -42,10 +48,14 @@ for packet in capture.sniff_continuously(packet_count=10):
 </p>
 
 ```python
-import pyshark 
+import pyshark
 
+# Create a LiveCapture object to capture packets from the specified interface
 capture = pyshark.LiveCapture(interface='your capture interface')
+
+# Start capturing packets for a specified duration (in seconds)
 capture.sniff(timeout=10)
+
 packets = [pkt for pkt in capture._packets]
 capture.close()
 for packet in packets:
@@ -61,6 +71,7 @@ The <b>PyShark LiveCapture</b> mode has a <i>BPF_Filter</i> that allows you to p
 ```python
 import pyshark 
 
+# Create a LiveCapture object to capture packets from the specified interface with a bpf_filter
 capture = pyshark.LiveCapture(interface='your capture interface', bpf_filter='udp port 53')
 for packet in capture:
    # do something with the packet
@@ -75,6 +86,7 @@ The <b>PyShark LiveCapture</b> mode has a <i>Display_Filter</i> that allows you 
 ```python
 import pyshark 
 
+# Create a LiveCapture object to capture packets from the specified interface with a display_filter
 capture = pyshark.LiveCapture(interface='your capture interface', display_filter='dns')
 for packet in capture:
    # do something with the packet
