@@ -96,6 +96,24 @@ for packet in capture:
 
 <p align="justify"> 
 
+Here are some additional parsing examples within this repository.
+  
+</p>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/dns_filtering_examples.py">Extract DNS elements from a PCAP packet</a>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/ftp_filtering_examples.py">Extract FTP elements from a PCAP packet</a>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/frame_filtering_example.py">Extract FRAME elements from a PCAP packet</a>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/https_filtering_examples.py">Extract HTTPS/TLS elements from a PCAP packet</a>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/ip_filtering_examples.py">Filter PCAP packet based on Source or Destination</a>
+
+* <a href="https://github.com/johnbumgarner/pyshark_usage_overview/blob/master/examples/snmp_filtering_examples.py">Extract SNMP elements from a PCAP packet</a>
+
+<p align="justify"> 
+
 Here are some additional parsing examples that I posted to <b>GitHub Gist</b>.
   
 </p>
